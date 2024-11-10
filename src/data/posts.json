@@ -11,6 +11,12 @@
             "title": "json-server",
             "content": "APIのモックサーバーライブラリをインストールしました。",
             "createdAt": "2024-11-09"
+        },
+        {
+            "id": 3,
+            "title": "udemyで勉強しています！！",
+            "content": "APIのモックサーバーライブラリをインストールしました。Next.js13をudemyで学んでいます。Next.js13をudemyで学んでいます。Next.js13をudemyで学んでいます。Next.js13をudemyで学んでいます。Next.js13をudemyで学んでいます。Next.js13をudemyで学んでいます。Next.js13をudemyで学んでいます。",
+            "createdAt": "2024-11-09"
         }
     ]
 }
