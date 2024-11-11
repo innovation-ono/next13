@@ -33,3 +33,52 @@ export const getArticle = async (id: number): Promise<Article> => {
 
   return article;
 };
+
+export const createArticle = async (
+  title: string,
+  content: string
+): Promise<Article> => {
+  const currentDatetime = new Date().toISOString();
+  const res = await fetch(`http://localhost:3001/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ title, content, createdAt: currentDatetime }),
+  });
+
+  if (!res.ok) {
+    throw new Error("APIでエラーが発生しました!");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const newArticle = await res.json();
+
+  return newArticle;
+};
+
+export const updateArticle = async (
+  id: string,
+  title: string,
+  content: string
+): Promise<Article> => {
+  const currentDatetime = new Date().toISOString();
+  const res = await fetch(`http://localhost:3001/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id, title, content, createdAt: currentDatetime }),
+  });
+
+  if (!res.ok) {
+    throw new Error("APIでエラーが発生しました!");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const newArticle = await res.json();
+
+  return newArticle;
+};
