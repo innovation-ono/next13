@@ -32,9 +32,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased container mx-auto bg-slate-700 text-slate-50`}
       >
-        <Header />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
