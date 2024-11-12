@@ -1,3 +1,4 @@
+import DeleteButton from "@/app/components/DeleteButton";
 import { getArticle } from "@/blogAPI";
 import Image from "next/image";
 
@@ -18,6 +19,9 @@ const Article = async ({ params }: { params: { id: number } }) => {
       <h1 className="text-4x1 text-center mb-10 mt-10">{article.title}</h1>
       <div className="text-lg leading-relaxed text-justify">
         <p>{article.content}</p>
+      </div>
+      <div className="text-right mt-3">
+        <DeleteButton id={article.id} />
       </div>
     </div>
   );
