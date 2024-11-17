@@ -3,7 +3,7 @@ import ArticleList from "./components/ArticleList";
 export default async function Home() {
   const API_URL = process.env.API_URL;
 
-  const res = await fetch(`${API_URL}/api/articleList`, { cache: "no-store" });
+  const res = await fetch(`${API_URL}/articleList`, { cache: "no-store" });
 
   const articles = await res.json();
 
