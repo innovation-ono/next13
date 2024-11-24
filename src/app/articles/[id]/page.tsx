@@ -5,13 +5,17 @@ const Article = async ({ params }: { params: { id: number } }) => {
   const { id } = await params;
   const API_URL = process.env.API_URL;
 
-  const res = await fetch(`${API_URL}/article/${id}`, {
+  const res = await fetch(`${API_URL}/article`, {
+    method: "POST",
+    body: JSON.stringify({ id: Number(id) }),
     next: {
       revalidate: 10,
     },
   });
 
-  const article = await res.json();
+  const resData = await res.json();
+
+  const article = resData.data;
 
   return (
     <div className="max-w-3x1 mx-auto p-5">
